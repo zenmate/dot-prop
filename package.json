@@ -1,46 +1,67 @@
 {
-	"name": "dot-prop",
-	"version": "4.2.0",
-	"description": "Get, set, or delete a property from a nested object using a dot path",
-	"license": "MIT",
-	"repository": "sindresorhus/dot-prop",
-	"author": {
-		"name": "Sindre Sorhus",
-		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
-	},
-	"engines": {
-		"node": ">=6"
-	},
-	"scripts": {
-		"test": "xo && ava",
-		"bench": "node bench.js"
-	},
-	"files": [
-		"index.js"
-	],
-	"keywords": [
-		"obj",
-		"object",
-		"prop",
-		"property",
-		"dot",
-		"path",
-		"get",
-		"set",
-		"delete",
-		"del",
-		"access",
-		"notation",
-		"dotty"
-	],
-	"dependencies": {
-		"is-obj": "^1.0.0"
-	},
-	"devDependencies": {
-		"ava": "*",
-		"benchmark": "^2.1.4",
-		"microtime": "^2.1.8",
-		"xo": "*"
-	}
+  "name": "@zenmate/dot-prop",
+  "version": "1.0.0",
+  "description": "Get, set, or delete a property from a nested object using a dot path",
+  "license": "MIT",
+  "engines": {
+    "node": "^10.0.0",
+    "npm": "^6.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zenmate/dot-prop.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zenmate/dot-prop/issues"
+  },
+  "homepage": "https://github.com/zenmate/dot-prop#readme",
+  "scripts": {
+    "build": "rm -rf ./lib && babel src -d lib",
+    "test": "ava",
+    "bench": "node bench.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "obj",
+    "object",
+    "prop",
+    "property",
+    "dot",
+    "path",
+    "get",
+    "set",
+    "delete",
+    "del",
+    "access",
+    "notation",
+    "dotty"
+  ],
+  "prettier": {
+    "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "ie 9",
+    "not ie <= 8"
+  ],
+  "dependencies": {
+    "is-obj": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "ava": "*",
+    "benchmark": "^2.1.4",
+    "husky": "^1.1.2",
+    "microtime": "^2.1.8",
+    "prettier": "^1.14.3",
+    "pretty-quick": "^1.8.0"
+  }
 }

@@ -2,13 +2,11 @@
 
 > Get, set, or delete a property from a nested object using a dot path
 
-
 ## Install
 
 ```
-$ npm install dot-prop
+$ npm install @zenmate/dot-prop --save
 ```
-
 
 ## Usage
 
@@ -16,20 +14,20 @@ $ npm install dot-prop
 const dotProp = require('dot-prop');
 
 // Getter
-dotProp.get({foo: {bar: 'unicorn'}}, 'foo.bar');
+dotProp.get({ foo: { bar: 'unicorn' } }, 'foo.bar');
 //=> 'unicorn'
 
-dotProp.get({foo: {bar: 'a'}}, 'foo.notDefined.deep');
+dotProp.get({ foo: { bar: 'a' } }, 'foo.notDefined.deep');
 //=> undefined
 
-dotProp.get({foo: {bar: 'a'}}, 'foo.notDefined.deep', 'default value');
+dotProp.get({ foo: { bar: 'a' } }, 'foo.notDefined.deep', 'default value');
 //=> 'default value'
 
-dotProp.get({foo: {'dot.dot': 'unicorn'}}, 'foo.dot\\.dot');
+dotProp.get({ foo: { 'dot.dot': 'unicorn' } }, 'foo.dot\\.dot');
 //=> 'unicorn'
 
 // Setter
-const obj = {foo: {bar: 'a'}};
+const obj = { foo: { bar: 'a' } };
 dotProp.set(obj, 'foo.bar', 'b');
 console.log(obj);
 //=> {foo: {bar: 'b'}}
@@ -43,21 +41,20 @@ console.log(obj);
 //=> {foo: {bar: 'b', baz: 'x'}}
 
 // Has
-dotProp.has({foo: {bar: 'unicorn'}}, 'foo.bar');
+dotProp.has({ foo: { bar: 'unicorn' } }, 'foo.bar');
 //=> true
 
 // Deleter
-const obj = {foo: {bar: 'a'}};
+const obj = { foo: { bar: 'a' } };
 dotProp.delete(obj, 'foo.bar');
 console.log(obj);
 //=> {foo: {}}
 
-obj.foo.bar = {x: 'y', y: 'x'};
+obj.foo.bar = { x: 'y', y: 'x' };
 dotProp.delete(obj, 'foo.bar.x');
 console.log(obj);
 //=> {foo: {bar: {y: 'x'}}}
 ```
-
 
 ## API
 
@@ -97,6 +94,7 @@ Type: `any`
 
 Default value.
 
+---
 
 ## License
 
